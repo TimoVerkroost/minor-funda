@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server-npm",
+  "license": "ISC",
+  "keywords": [
+    "server-npm"
+  ],
+  "author": "Timo Verkroost <timo.verkroost@gmail.com>",
+  "contributors": [
+    "Timo Verkroost <timo.verkroost@gmail.com>"
+  ],
+  "devDependencies": {
+    "budo": "^9.0.0"
+  },
+  "scripts": {
+    "build": "node script/build-index",
+    "start": "budo --dir app --live"
+  }
+}
