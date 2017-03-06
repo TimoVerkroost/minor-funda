@@ -3,3 +3,11 @@ body {
     padding: 0;
     margin: 0;
 }
+
+main > section {
+    display: none;
+}
+
+main > section.active {
+    display: block;
+}

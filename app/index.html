@@ -9,7 +9,77 @@
 </head>
 <body>
 <main>
-    Project
+    <section id="searchContainer">
+        <form id="searchForm">
+            <input type="text" id="searchField">
+            <label>
+                Koop
+                <input type="radio" name="type" value="koop">
+            </label>
+            <label>
+                Huur
+                <input type="radio" name="type" value="huur">
+            </label>
+            <select name="minPrice" id="minPrice">
+                <option selected="selected" value="0">
+                    &euro; 0
+                </option>
+                <option value="50000">
+                    &euro; 50.000
+                </option>
+                <option value="75000">
+                    &euro; 75.000
+                </option>
+                <option value="100000">
+                    &euro; 100.000
+                </option>
+                <option value="125000">
+                    &euro; 125.000
+                </option>
+                <option value="150000">
+                    &euro; 150.000
+                </option>
+                <option value="175000">
+                    &euro; 175.000
+                </option>
+                <option value="200000">
+                    &euro; 200.000
+                </option>
+            </select>
+
+            <select name="maxPrice" id="maxPrice">
+                <option value="0">
+                    &euro; 0
+                </option>
+                <option value="50000">
+                    &euro; 50.000
+                </option>
+                <option value="75000">
+                    &euro; 75.000
+                </option>
+                <option value="100000">
+                    &euro; 100.000
+                </option>
+                <option value="125000">
+                    &euro; 125.000
+                </option>
+                <option value="150000">
+                    &euro; 150.000
+                </option>
+                <option value="175000">
+                    &euro; 175.000
+                </option>
+                <option value="200000">
+                    &euro; 200.000
+                </option>
+                <option selected="selected" value="2147483647">
+                    Geen maximum
+                </option>
+            </select>
+            <div id="getResults">Zoeken</div>
+        </form>
+    </section>
+    <section id="bewaard">Bewaard</section>
 </main>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/routie.min.js"></script>

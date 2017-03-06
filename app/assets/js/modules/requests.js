@@ -2,19 +2,23 @@
 var requests = (function () {
     // Search API
     var type = "koop";
-    var place = "amsterdam";
-    var priceRange = "125000-200000";
-    var radius = 10;
-    var searchURL = "/?type=" + type + "&zo=/" + type + "/" + place + "/+" + radius + "km/" + priceRange + "/&page=1&pagesize=25";
-    var URL = config.kyrandiaURL + config.apiKey + searchURL;
+    var place = "/amsterdam";
+    var priceRange;
+    var radius = "/+5km";
+    var searchURL;
+    var URL;
+    var page = 1;
 
     // List API
     var tinyBase = "http://funda.kyrandia.nl/tinyId/";
-    var tinyID = "49013804,49015089";
+    var tinyID = "49013804,49015089,49047381,49042033,49036708,49010470,48103537";
     var tinyURL = tinyBase + tinyID;
 
     return {
-        searchRadius: function () {
+        searchRadius: function (min, max) {
+            priceRange = "/" + min + "-" + max;
+            searchURL = "/?type=" + type + "&zo=" + place + priceRange + radius + "/&page=" + page + "&pagesize=25";
+            URL = config.kyrandiaURL + config.apiKey + searchURL;
             aja()
                 .method("get")
                 .url(URL)
