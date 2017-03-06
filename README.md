@@ -1,8 +1,7 @@
 # Prototype a new search functionality for Funda
 Use the APIs of Funda to get your own ideas and understanding a new way of seeking homes. A list, on a map, or another way, everything is worth considering! The aim is to help the Funda user to find their perfect home quickly and easily.
 
-
-## User storie
+## User story
 As Funda user I want to get suggestions of homes that I think might be interesting, so I get that offer just outside my search.
 
 ## Why does this application have a purpose?
