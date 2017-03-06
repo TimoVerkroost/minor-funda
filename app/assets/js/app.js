@@ -1,4 +1,13 @@
 (function(){
     "use strict";
-    console.log(config.apiKey);
+    var app = (function () {
+        return {
+            // App settings
+            init: function () {
+                requests.getDetail();
+            }
+        };
+    })();
+
+    app.init();
 }());
