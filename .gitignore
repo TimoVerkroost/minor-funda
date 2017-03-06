@@ -4,6 +4,7 @@ node_modules/
 *.DS_Store
 config.js
 app/config.js
+app/**/config.js
 
 # Created by https://www.gitignore.io/api/phpstorm
 

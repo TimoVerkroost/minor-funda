@@ -15,7 +15,6 @@
     "budo": "^9.0.0"
   },
   "scripts": {
-    "build": "node script/build-index",
     "start": "budo --dir app --live"
   }
 }
