@@ -4,6 +4,7 @@
         return {
             // App settings
             init: function () {
+                requests.searchRadius();
                 requests.getDetail();
             }
         };

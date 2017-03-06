@@ -4,6 +4,12 @@ Use the APIs of Funda to get your own ideas and understanding a new way of seeki
 ## User story
 As Funda user I want to get suggestions of homes that I think might be interesting, so I get that offer just outside my search.
 
+### Possible solutions
+- When a user searches with a max price suggest more houses with 5% higher price.
+- When a user searches with a min price suggest more houses with 5% lesser price.
+- When a user searches within a specific area or place suggest a +5km range and +10km range with the same filters.
+- When a user searches and is logged in use the saved homes 
+
 ## Why does this application have a purpose?
 
 ## How does it works
