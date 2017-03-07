@@ -1,4 +1,4 @@
-// Templates with engine
+// Templates with engine TransparencyJS
 var templates = (function () {
     var searchObjects;
     var searchObject;
@@ -21,6 +21,9 @@ var templates = (function () {
                 title: {
                     text: function() {
                         return this.Adres;
+                    },
+                    href: function () {
+                        return this.URL;
                     }
                 },
                 address: {
@@ -59,6 +62,9 @@ var templates = (function () {
                 title: {
                     text: function() {
                         return this.Adres;
+                    },
+                    href: function() {
+                        return this.URL;
                     }
                 },
                 address: {
@@ -98,6 +104,9 @@ var templates = (function () {
                 title: {
                     text: function() {
                         return this.adr;
+                    },
+                    href: function () {
+                        return "http://www.funda.nl" + this.url;
                     }
                 },
                 address: {
