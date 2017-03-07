@@ -1,13 +1,7 @@
 // Sections
 var sections = (function () {
     var hidden,
-        i,
-        formID,
-        minPrice,
-        maxPrice,
-        getResults,
-        minPriceValue,
-        maxPriceValue;
+        i;
     return {
         hide: function () {
             // Hide other sections
@@ -22,19 +16,12 @@ var sections = (function () {
             console.log("saved");
         },
         search: function () {
-
-            // formID = document.getElementById("searchForm");
-            // getResults = document.getElementById("getResults");
-            // minPrice = document.getElementById("minPrice");
-            // maxPrice = document.getElementById("maxPrice");
-            //
-            // getResults.addEventListener("click", searchResults);
-            // function searchResults() {
-            //     minPriceValue = minPrice.options[ minPrice.selectedIndex ].value;
-            //     maxPriceValue = maxPrice.options[ maxPrice.selectedIndex ].value;
-            //     requests.searchRadius(minPriceValue, maxPriceValue);
-            // }
-        }
+            console.log("search");
+            requests.search();
+        },
+        suggested: function () {
+            console.log("suggested");
+        },
     };
 
 })();

@@ -2,6 +2,14 @@ html,
 body {
     padding: 0;
     margin: 0;
+    font-family: "Proxima Nova", sans-serif;
+    color: #333333;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 main > section {
@@ -10,4 +18,140 @@ main > section {
 
 main > section.active {
     display: block;
+}
+
+nav#top {
+    background-color: #F7A100;
+    color: #FFFFFF;
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    padding: 0 1em;
+}
+
+nav#top #logoTop {
+    display: inline-block;
+    height: 100%;
+    width: 7em;
+    align-self: center;
+}
+
+nav#top ul {
+    list-style-type: none;
+    margin: 0 0 0 auto;
+    align-self: center;
+    display: inline-block;
+    padding:0;
+    font-size: 0;
+}
+
+nav#top li {
+    border-left: .1em solid #DE9000;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+nav#top li:last-of-type {
+    border-right: .1em solid #DE9000;
+}
+
+nav#top li a {
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 1em 1.5em;
+}
+
+#searchFields {
+    background-color: #E6F2F7;
+    padding: .5em 1em;
+}
+
+input,
+select {
+    background-color: #FFFFFF ;
+    border: .1em solid #EDEDED;
+    box-sizing: border-box;
+    padding: .5em .75em;
+    font-size: 1em;
+    border-radius: 0;
+    margin: .2em;
+}
+
+select {
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background: url(../images/arrowDown.svg) #FFFFFF no-repeat;
+    background-position: center right 0.25em;
+    background-size: 1.3em;
+    padding-right: 1.5em;
+}
+
+input:active,
+input:focus,
+select:active,
+select:focus{
+    border: .1em solid #60C5F8;
+    outline: none;
+}
+
+input[type="search"] {
+    width: 100%;
+}
+
+.result {
+    max-width: 40em;
+    margin: 1em auto;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+}
+
+.result img {
+    align-self: flex-start;
+}
+
+.result .infoHome {
+    align-self: flex-start;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 580px) {
+
+    .result img {
+        flex-basis: 40%;
+        max-width: 40%;
+    }
+
+    .result .infoHome {
+        flex-basis: 60%;
+        max-width: 60%;
+        padding: 0 1em;
+    }
+
+}
+
+.icon-heart-white {
+    background: url(../images/heart.svg) no-repeat;
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1em;
+    background-size: cover;
+    margin-right: .5em;
+}
+
+.icon-light-white {
+    background: url(../images/idea-light.svg) no-repeat;
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1em;
+    background-size: cover;
+    margin-right: .5em;
 }
