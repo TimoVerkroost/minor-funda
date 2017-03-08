@@ -44,6 +44,7 @@ var requests = (function () {
             searchURL = "/?type=koop&zo=/"+ place +"/+"+ range +"km/"+ minPrice +"-"+ maxPrice +"/0+woonopp/appartement/2+kamers/bouwperiode-"+ yearRange +"/&page="+ page +"&pagesize=25";
             callURL = config.kyrandiaURL + config.apiKey + searchURL;
             loadingIndicator.classList.add("show");
+            loadingIndicator.classList.remove("hide");
             aja()
                 .method("get")
                 .url(callURL)
@@ -64,6 +65,7 @@ var requests = (function () {
 
         getTinyDetail: function () {
             loadingIndicator.classList.add("show");
+            loadingIndicator.classList.remove("hide");
             // AJAX call for tiny detail items
             aja()
                 .method("get")
@@ -132,6 +134,7 @@ var requests = (function () {
             callURL = config.kyrandiaURL + config.apiKey + suggestedURL;
 
             loadingIndicator.classList.add("show");
+            loadingIndicator.classList.remove("hide");
             // AJAX call for suggested items
             aja()
                 .method("get")

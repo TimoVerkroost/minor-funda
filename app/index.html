@@ -38,44 +38,58 @@
         <form id="searchFields">
             <div class="container">
                 <input type="search" name="plaats" id="searchField" autocomplete="off" placeholder="Plaats, buurt, adres etc." required>
-                <select name="afstand" id="range" required>
-                    <option selected="selected" value="0">+0 km</option>
-                    <option value="5">+5 km</option>
-                    <option value="10">+10 km</option>
-                    <option value="15">+15 km</option>
-                </select>
-                <select name="bouwjaar" id="buildYear" required>
-                    <option value="1981-1990">1981-1990</option>
-                    <option selected="selected" value="1991-2000">1991-2000</option>
-                    <option value="2001-2010">2001-2010</option>
-                </select>
-                <select name="minPrijs" id="minPrice" required>
-                    <option selected="selected" value="0">&euro; 0</option>
-                    <option value="50000">&euro; 50.000</option>
-                    <option value="75000">&euro; 75.000</option>
-                    <option value="100000">&euro; 100.000</option>
-                    <option value="125000">&euro; 125.000</option>
-                    <option value="150000">&euro; 150.000</option>
-                    <option value="175000">&euro; 175.000</option>
-                    <option value="225000">&euro; 225.000</option>
-                    <option value="250000">&euro; 250.000</option>
-                    <option value="275000">&euro; 275.000</option>
-                    <option value="300000">&euro; 300.000</option>
-                </select>
-                <select name="maxPrijs" id="maxPrice" required>
-                    <option selected="selected" value="2000000">Geen maximum</option>
-                    <option value="50000">&euro; 50.000</option>
-                    <option value="75000">&euro; 75.000</option>
-                    <option value="100000">&euro; 100.000</option>
-                    <option value="125000">&euro; 125.000</option>
-                    <option value="150000">&euro; 150.000</option>
-                    <option value="175000">&euro; 175.000</option>
-                    <option value="225000">&euro; 225.000</option>
-                    <option value="250000">&euro; 250.000</option>
-                    <option value="275000">&euro; 275.000</option>
-                    <option value="300000">&euro; 300.000</option>
-                </select>
-                <input type="submit" value="Zoeken">
+                <label for="range">
+                    <span>Afstand:</span>
+                    <select name="afstand" id="range" required>
+                        <option selected="selected" value="0">+0 km</option>
+                        <option value="5">+5 km</option>
+                        <option value="10">+10 km</option>
+                        <option value="15">+15 km</option>
+                    </select>
+                </label>
+                <label for="buildYear">
+                    <span>Bouwjaar:</span>
+                    <select name="bouwjaar" id="buildYear" required>
+                        <option value="1981-1990">1981-1990</option>
+                        <option selected="selected" value="1991-2000">1991-2000</option>
+                        <option value="2001-2010">2001-2010</option>
+                    </select>
+                </label>
+                <label for="minPrice">
+                    <span>Min prijs:</span>
+                    <select name="minPrijs" id="minPrice" required>
+                        <option selected="selected" value="0">&euro; 0</option>
+                        <option value="50000">&euro; 50.000</option>
+                        <option value="75000">&euro; 75.000</option>
+                        <option value="100000">&euro; 100.000</option>
+                        <option value="125000">&euro; 125.000</option>
+                        <option value="150000">&euro; 150.000</option>
+                        <option value="175000">&euro; 175.000</option>
+                        <option value="225000">&euro; 225.000</option>
+                        <option value="250000">&euro; 250.000</option>
+                        <option value="275000">&euro; 275.000</option>
+                        <option value="300000">&euro; 300.000</option>
+                    </select>
+                </label>
+                <label for="maxPrice">
+                    <span>Max prijs:</span>
+                    <select name="maxPrijs" id="maxPrice" required>
+                        <option selected="selected" value="2000000">Geen maximum</option>
+                        <option value="50000">&euro; 50.000</option>
+                        <option value="75000">&euro; 75.000</option>
+                        <option value="100000">&euro; 100.000</option>
+                        <option value="125000">&euro; 125.000</option>
+                        <option value="150000">&euro; 150.000</option>
+                        <option value="175000">&euro; 175.000</option>
+                        <option value="225000">&euro; 225.000</option>
+                        <option value="250000">&euro; 250.000</option>
+                        <option value="275000">&euro; 275.000</option>
+                        <option value="300000">&euro; 300.000</option>
+                    </select>
+                </label>
+                <label for="submit">
+                    <input type="submit" value="Zoeken" id="submit">
+                </label>
             </div>
         </form>
         <div id="haveSearchResults" class="container">
