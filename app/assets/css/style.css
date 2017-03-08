@@ -148,15 +148,17 @@ input[type="search"] {
 input[type="submit"] {
     background-color: #0071B3;
     color: #FFFFFF;
-    transition: background-color .5s ease;
+    transition: background-color .5s ease, border-color .5s ease;
     cursor: pointer;
     box-sizing: border-box;
     margin: 1em auto;
+    border-color: #0071B3;
 }
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
     background-color: #DE9000;
+    border-color: #DE9000;
 }
 
 @media screen and (min-width: 580px) {
@@ -240,6 +242,7 @@ input[type="submit"]:focus {
 .container > h2 {
     flex-basis: 100%;
     max-width: 100%;
+    text-align: center;
 }
 
 .show {
