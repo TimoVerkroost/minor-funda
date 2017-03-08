@@ -8,9 +8,9 @@ var sections = (function () {
         buildYear,
         minPrice,
         maxPrice;
-    var suggestedLink = document.getElementById('suggestiesLink');
-    var haveResults = document.getElementById('haveSearchResults');
-    var noResults = document.getElementById('noSearchResults');
+    var suggestedLink = document.getElementById("suggestiesLink");
+    var haveResults = document.getElementById("haveSearchResults");
+    var noResults = document.getElementById("noSearchResults");
     return {
         hide: function () {
             // Hide other sections
@@ -52,7 +52,7 @@ var sections = (function () {
         },
         search: function () {
             // Get form with input values of user
-            formInput = document.getElementById('searchFields');
+            formInput = document.getElementById("searchFields");
             // To prevent duplicate eventListeners
             formInput.removeEventListener("submit", getFormValues);
             // On submit get values
@@ -62,19 +62,19 @@ var sections = (function () {
                 // Prevent default submit
                 event.preventDefault();
                 // Get search input value and set in localStorage to use everywhere in the application
-                searchFieldInput = document.getElementById('searchField').value;
+                searchFieldInput = document.getElementById("searchField").value;
                 localStorage.setItem("fundaPlace", searchFieldInput);
                 // Get range input value and set in localStorage to use everywhere in the application
-                range = document.getElementById('range').value;
+                range = document.getElementById("range").value;
                 localStorage.setItem("fundaRange", range);
                 // Get buildYear input value and set in localStorage to use everywhere in the application
-                buildYear = document.getElementById('buildYear').value;
+                buildYear = document.getElementById("buildYear").value;
                 localStorage.setItem("fundaBuildYear", buildYear);
                 // Get buildYear input value and set in localStorage to use everywhere in the application
-                minPrice = document.getElementById('minPrice').value;
+                minPrice = document.getElementById("minPrice").value;
                 localStorage.setItem("fundaMinPrice", minPrice);
                 // Get buildYear input value and set in localStorage to use everywhere in the application
-                maxPrice = document.getElementById('maxPrice').value;
+                maxPrice = document.getElementById("maxPrice").value;
                 localStorage.setItem("fundaMaxPrice", maxPrice);
                 // Request search
                 requests.search();
@@ -123,7 +123,7 @@ var sections = (function () {
             if (localStorage.getItem("fundaPlace") != null) {
                 requests.getSuggestedHomes();
             } else {
-                window.location.hash = "#"
+                window.location.hash = "#";
             }
         }
     };

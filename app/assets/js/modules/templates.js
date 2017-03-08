@@ -48,7 +48,7 @@ var templates = (function () {
                 }
             };
 
-            Transparency.render(document.getElementById('searchResults'), searchObjects, searchObject);
+            Transparency.render(document.getElementById("searchResults"), searchObjects, searchObject);
         },
         // Suggested list
         suggestedList: function (response) {
@@ -89,7 +89,7 @@ var templates = (function () {
                 }
             };
 
-            Transparency.render(document.getElementById('suggestieResults'), suggestedObjects, suggestedObject);
+            Transparency.render(document.getElementById("suggestieResults"), suggestedObjects, suggestedObject);
         },
         // With tiny ID API generated template
         tinyDetailList: function (response) {
@@ -131,7 +131,7 @@ var templates = (function () {
                 }
             };
 
-            Transparency.render(document.getElementById('bewaardResults'), tinyObjects, tinyObject);
+            Transparency.render(document.getElementById("bewaardResults"), tinyObjects, tinyObject);
         }
     };
 
