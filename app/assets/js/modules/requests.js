@@ -43,6 +43,7 @@ var requests = (function () {
             maxPrice    = localStorage.fundaMaxPrice;
             searchURL = "/?type=koop&zo=/"+ place +"/+"+ range +"km/"+ minPrice +"-"+ maxPrice +"/0+woonopp/appartement/2+kamers/bouwperiode-"+ yearRange +"/&page="+ page +"&pagesize=25";
             callURL = config.kyrandiaURL + config.apiKey + searchURL;
+            // Loading indicator
             loadingIndicator.classList.add("show");
             loadingIndicator.classList.remove("hide");
             aja()
@@ -51,6 +52,7 @@ var requests = (function () {
                 .on("200", function (response) {
                     // Loaded template for searched items
                     templates.searchList(response);
+                    // Loading indicator
                     loadingIndicator.classList.add("hide");
                     loadingIndicator.classList.remove("show");
                 })
@@ -64,6 +66,7 @@ var requests = (function () {
         },
 
         getTinyDetail: function () {
+            // Loading indicator
             loadingIndicator.classList.add("show");
             loadingIndicator.classList.remove("hide");
             // AJAX call for tiny detail items
@@ -77,6 +80,7 @@ var requests = (function () {
                     }
                     // Loaded template for saved items
                     templates.tinyDetailList(response);
+                    // Loading indicator
                     loadingIndicator.classList.add("hide");
                     loadingIndicator.classList.remove("show");
                 })
@@ -132,7 +136,7 @@ var requests = (function () {
             suggestedURL = "?type="+ type +"&zo=/"+ place +"/"+ radiusSuggested +"/" + minPriceSuggested +"-"+ maxPriceSuggested +"/"+ area +"+woonopp"+  typeHouse + "/" + rooms +"+kamers/&page=1&pagesize=25";
             // Combine URL with API root url and API key
             callURL = config.kyrandiaURL + config.apiKey + suggestedURL;
-
+            // Loading indicator
             loadingIndicator.classList.add("show");
             loadingIndicator.classList.remove("hide");
             // AJAX call for suggested items
@@ -142,6 +146,7 @@ var requests = (function () {
                 .on("200", function (response) {
                     // Loaded template for suggested items
                     templates.suggestedList(response);
+                    // Loading indicator
                     loadingIndicator.classList.add("hide");
                     loadingIndicator.classList.remove("show");
                 })
