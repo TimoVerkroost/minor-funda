@@ -5,9 +5,10 @@ var sections = (function () {
         formInput,
         searchFieldInput,
         range,
-        buildYear,
-        haveResults,
-        noResults;
+        buildYear;
+    var suggestedLink = document.getElementById('suggestiesLink');
+    var haveResults = document.getElementById('haveSearchResults');
+    var noResults = document.getElementById('noSearchResults');
     return {
         hide: function () {
             // Hide other sections
@@ -19,10 +20,35 @@ var sections = (function () {
             }
         },
         saved: function () {
+            // Loaded last search from storage
+            if (localStorage.getItem("fundaPlace") != null) {
+                requests.search();
+                // Hide no results and show results
+                noResults.classList.add("hide");
+                haveResults.classList.add("show");
+                // Remove old classes
+                noResults.classList.remove("show");
+                haveResults.classList.remove("hide");
+                // Animate Light
+                suggestedLink.classList.remove("disabled");
+                suggestedLink.classList.add("animatedLight");
+                // Add link from suggest so user can go there
+                suggestedLink.getElementsByTagName("a")[0].setAttribute("href", "#suggesties");
+            } else {
+                // Hide results and show no results
+                noResults.classList.add("show");
+                haveResults.classList.add("hide");
+                // Remove old classes
+                noResults.classList.remove("hide");
+                haveResults.classList.remove("show");
+                // Disable suggested link
+                suggestedLink.classList.remove("animatedLight");
+                suggestedLink.classList.add("disabled");
+                // Remove link from suggest so user can't go there
+                suggestedLink.getElementsByTagName("a")[0].setAttribute("href", "#");
+            }
         },
         search: function () {
-            haveResults = document.getElementById('haveSearchResults');
-            noResults = document.getElementById('noSearchResults');
             // Get form with input values of user
             formInput = document.getElementById('searchFields');
             // To prevent duplicate eventListeners
@@ -50,6 +76,11 @@ var sections = (function () {
                 // Remove old classes
                 noResults.classList.remove("show");
                 haveResults.classList.remove("hide");
+                // Animate Light
+                suggestedLink.classList.remove("disabled");
+                suggestedLink.classList.add("animatedLight");
+                // Add link from suggest so user can go there
+                suggestedLink.getElementsByTagName("a")[0].setAttribute("href", "#suggesties");
             }
             // Loaded last search from storage
             if (localStorage.getItem("fundaPlace") != null) {
@@ -60,6 +91,11 @@ var sections = (function () {
                 // Remove old classes
                 noResults.classList.remove("show");
                 haveResults.classList.remove("hide");
+                // Animate Light
+                suggestedLink.classList.remove("disabled");
+                suggestedLink.classList.add("animatedLight");
+                // Add link from suggest so user can go there
+                suggestedLink.getElementsByTagName("a")[0].setAttribute("href", "#suggesties");
             } else {
                 // Hide results and show no results
                 noResults.classList.add("show");
@@ -67,10 +103,20 @@ var sections = (function () {
                 // Remove old classes
                 noResults.classList.remove("hide");
                 haveResults.classList.remove("show");
+                // Disable suggested link
+                suggestedLink.classList.remove("animatedLight");
+                suggestedLink.classList.add("disabled");
+                // Remove link from suggest so user can't go there
+                suggestedLink.getElementsByTagName("a")[0].setAttribute("href", "#");
             }
         },
         suggested: function () {
-            requests.getSuggestedHomes();
+            // Check if there are suggested items else redirect to search
+            if (localStorage.getItem("fundaPlace") != null) {
+                requests.getSuggestedHomes();
+            } else {
+                window.location.hash = "#"
+            }
         }
     };
 

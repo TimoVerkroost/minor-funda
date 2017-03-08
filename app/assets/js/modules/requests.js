@@ -1,12 +1,13 @@
 // AJAX requests
 var requests = (function () {
     var callURL;
+    var loadingIndicator;
 
     // Search API
     var type = "koop";
-    var place = "amsterdam";
-    var range = 5;
-    var yearRange = "1991-2000";
+    var place;
+    var range;
+    var yearRange;
     var typeHouse = "/appartement";
     var searchURL;
     var page = 1;
@@ -38,12 +39,15 @@ var requests = (function () {
             yearRange   = localStorage.fundaBuildYear;
             searchURL = "/?type=koop&zo=/"+ place +"/+"+ range +"km/175000-225000/50+woonopp/appartement/2+kamers/bouwperiode-"+ yearRange +"/&page="+ page +"&pagesize=10";
             callURL = config.kyrandiaURL + config.apiKey + searchURL;
+            document.getElementsByClassName("loaderAjax")[0].classList.add("show");
             aja()
                 .method("get")
                 .url(callURL)
                 .on("200", function (response) {
                     // Loaded template for searched items
                     templates.searchList(response);
+                    document.getElementsByClassName("loaderAjax")[0].classList.add("hide");
+                    document.getElementsByClassName("loaderAjax")[0].classList.remove("show");
                 })
                 .on("40x", function () {
 
@@ -55,17 +59,21 @@ var requests = (function () {
         },
 
         getTinyDetail: function () {
+            document.getElementsByClassName("loaderAjax")[0].classList.add("show");
             // AJAX call for tiny detail items
             aja()
                 .method("get")
                 .url(tinyURL)
                 .on("200", function (response) {
+                    console.log(response);
                     // Make for every tiny object a bigger object
                     for (i = 0; i < response.length; i++) {
                         requests.getFullDetail(response[i].intid, response.length);
                     }
                     // Loaded template for saved items
                     templates.tinyDetailList(response);
+                    document.getElementsByClassName("loaderAjax")[0].classList.add("hide");
+                    document.getElementsByClassName("loaderAjax")[0].classList.remove("show");
                 })
                 .on("40x", function () {
 
@@ -119,6 +127,8 @@ var requests = (function () {
             suggestedURL = "?type="+ type +"&zo=/"+ place +"/"+ radiusSuggested +"/" + minPrice +"-"+ maxPrice +"/"+ area +"+woonopp"+  typeHouse + "/" + rooms +"+kamers/&page=1&pagesize=25";
             // Combine URL with API root url and API key
             callURL = config.kyrandiaURL + config.apiKey + suggestedURL;
+
+            document.getElementsByClassName("loaderAjax")[0].classList.add("show");
             // AJAX call for suggested items
             aja()
                 .method("get")
@@ -126,6 +136,8 @@ var requests = (function () {
                 .on("200", function (response) {
                     // Loaded template for suggested items
                     templates.suggestedList(response);
+                    document.getElementsByClassName("loaderAjax")[0].classList.add("hide");
+                    document.getElementsByClassName("loaderAjax")[0].classList.remove("show");
                 })
                 .on("40x", function () {
 

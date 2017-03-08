@@ -23,6 +23,8 @@ main > section.active {
 nav {
     background-color: #F7A100;
     color: #FFFFFF;
+    position: relative;
+    z-index: 100;
 }
 
 nav #logoTop {
@@ -63,6 +65,12 @@ nav li a {
     color: #FFFFFF;
     text-decoration: none;
     padding: .75em 1em;
+    background-color: transparent;
+    transition: background-color .5s ease;
+}
+
+nav li a:hover {
+    background-color: #DE9000;
 }
 
 @media screen and (min-width: 480px) {
@@ -121,6 +129,39 @@ input[type="search"] {
 #searchFields {
     background-color: #E6F2F7;
     padding: .5em 0;
+    position: relative;
+    z-index: 100;
+}
+
+/*#haveSearchResults {*/
+    /*position: relative;*/
+/*}*/
+
+.loaderAjax {
+    position: absolute;
+    z-index:99;
+    text-align: center;
+    min-height: 100vh;
+    min-width: 100%;
+    align-items: center;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(255,255,255,1);
+    text-indent: 200%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.loaderAjax span {
+    margin: 0 auto;
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: rgb(247, 161, 0);
+    animation: spinner-in-out 1s infinite linear;
 }
 
 .container {
@@ -148,6 +189,10 @@ input[type="search"] {
 
 .hide {
     display: none;
+}
+
+.disabled {
+    opacity: .4;
 }
 
 .result {
@@ -255,4 +300,47 @@ input[type="search"] {
     line-height: 1em;
     background-size: cover;
     margin-right: .5em;
+    animation-iteration-count: 3;
+}
+
+.animatedLight .icon-light-white {
+    animation-duration: 1s;
+    animation-name: bounce;
+    transform-origin: center bottom;
+}
+
+@keyframes spinner-in-out {
+    0% {
+        opacity:1;
+        transform: scale(1, 1);
+    }
+    50% {
+        opacity:.2;
+        transform: scale(.5, .5);
+    }
+    100% {
+        opacity:1;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes bounce {
+    from, 20%, 53%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translate3d(0,0,0);
+    }
+
+    40%, 43% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -20px, 0);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -10px, 0);
+    }
+
+    90% {
+        transform: translate3d(0,-8px,0);
+    }
 }
