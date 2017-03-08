@@ -1,13 +1,15 @@
 // AJAX requests
 var requests = (function () {
     var callURL;
-    var loadingIndicator;
+    var loadingIndicator = document.getElementsByClassName("loaderAjax")[0];
 
     // Search API
     var type = "koop";
     var place;
     var range;
     var yearRange;
+    var minPrice;
+    var maxPrice;
     var typeHouse = "/appartement";
     var searchURL;
     var page = 1;
@@ -25,8 +27,8 @@ var requests = (function () {
 
     // Suggested homes
     var suggestedURL;
-    var minPrice;
-    var maxPrice;
+    var minPriceSuggested;
+    var maxPriceSuggested;
     var radiusSuggested = "/+15km";
     var price;
     var area;
@@ -37,17 +39,19 @@ var requests = (function () {
             place       = localStorage.fundaPlace;
             range       = localStorage.fundaRange;
             yearRange   = localStorage.fundaBuildYear;
-            searchURL = "/?type=koop&zo=/"+ place +"/+"+ range +"km/175000-225000/50+woonopp/appartement/2+kamers/bouwperiode-"+ yearRange +"/&page="+ page +"&pagesize=10";
+            minPrice    = localStorage.fundaMinPrice;
+            maxPrice    = localStorage.fundaMaxPrice;
+            searchURL = "/?type=koop&zo=/"+ place +"/+"+ range +"km/"+ minPrice +"-"+ maxPrice +"/0+woonopp/appartement/2+kamers/bouwperiode-"+ yearRange +"/&page="+ page +"&pagesize=25";
             callURL = config.kyrandiaURL + config.apiKey + searchURL;
-            document.getElementsByClassName("loaderAjax")[0].classList.add("show");
+            loadingIndicator.classList.add("show");
             aja()
                 .method("get")
                 .url(callURL)
                 .on("200", function (response) {
                     // Loaded template for searched items
                     templates.searchList(response);
-                    document.getElementsByClassName("loaderAjax")[0].classList.add("hide");
-                    document.getElementsByClassName("loaderAjax")[0].classList.remove("show");
+                    loadingIndicator.classList.add("hide");
+                    loadingIndicator.classList.remove("show");
                 })
                 .on("40x", function () {
 
@@ -59,21 +63,20 @@ var requests = (function () {
         },
 
         getTinyDetail: function () {
-            document.getElementsByClassName("loaderAjax")[0].classList.add("show");
+            loadingIndicator.classList.add("show");
             // AJAX call for tiny detail items
             aja()
                 .method("get")
                 .url(tinyURL)
                 .on("200", function (response) {
-                    console.log(response);
                     // Make for every tiny object a bigger object
                     for (i = 0; i < response.length; i++) {
                         requests.getFullDetail(response[i].intid, response.length);
                     }
                     // Loaded template for saved items
                     templates.tinyDetailList(response);
-                    document.getElementsByClassName("loaderAjax")[0].classList.add("hide");
-                    document.getElementsByClassName("loaderAjax")[0].classList.remove("show");
+                    loadingIndicator.classList.add("hide");
+                    loadingIndicator.classList.remove("show");
                 })
                 .on("40x", function () {
 
@@ -120,15 +123,15 @@ var requests = (function () {
             area        = localStorage.fundaAverageSurface;
             rooms       = localStorage.fundaAverageRooms;
             // Make min price range 5% lower then min price
-            minPrice = Math.round(price * 0.95);
+            minPriceSuggested = Math.round(price * 0.95);
             // Make max price range 5% higher then max price
-            maxPrice = Math.round(price * 1.05);
+            maxPriceSuggested = Math.round(price * 1.05);
             // Generate API call URL for suggested items
-            suggestedURL = "?type="+ type +"&zo=/"+ place +"/"+ radiusSuggested +"/" + minPrice +"-"+ maxPrice +"/"+ area +"+woonopp"+  typeHouse + "/" + rooms +"+kamers/&page=1&pagesize=25";
+            suggestedURL = "?type="+ type +"&zo=/"+ place +"/"+ radiusSuggested +"/" + minPriceSuggested +"-"+ maxPriceSuggested +"/"+ area +"+woonopp"+  typeHouse + "/" + rooms +"+kamers/&page=1&pagesize=25";
             // Combine URL with API root url and API key
             callURL = config.kyrandiaURL + config.apiKey + suggestedURL;
 
-            document.getElementsByClassName("loaderAjax")[0].classList.add("show");
+            loadingIndicator.classList.add("show");
             // AJAX call for suggested items
             aja()
                 .method("get")
@@ -136,8 +139,8 @@ var requests = (function () {
                 .on("200", function (response) {
                     // Loaded template for suggested items
                     templates.suggestedList(response);
-                    document.getElementsByClassName("loaderAjax")[0].classList.add("hide");
-                    document.getElementsByClassName("loaderAjax")[0].classList.remove("show");
+                    loadingIndicator.classList.add("hide");
+                    loadingIndicator.classList.remove("show");
                 })
                 .on("40x", function () {
 

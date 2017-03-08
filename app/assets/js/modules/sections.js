@@ -5,7 +5,9 @@ var sections = (function () {
         formInput,
         searchFieldInput,
         range,
-        buildYear;
+        buildYear,
+        minPrice,
+        maxPrice;
     var suggestedLink = document.getElementById('suggestiesLink');
     var haveResults = document.getElementById('haveSearchResults');
     var noResults = document.getElementById('noSearchResults');
@@ -68,6 +70,12 @@ var sections = (function () {
                 // Get buildYear input value and set in localStorage to use everywhere in the application
                 buildYear = document.getElementById('buildYear').value;
                 localStorage.setItem("fundaBuildYear", buildYear);
+                // Get buildYear input value and set in localStorage to use everywhere in the application
+                minPrice = document.getElementById('minPrice').value;
+                localStorage.setItem("fundaMinPrice", minPrice);
+                // Get buildYear input value and set in localStorage to use everywhere in the application
+                maxPrice = document.getElementById('maxPrice').value;
+                localStorage.setItem("fundaMaxPrice", maxPrice);
                 // Request search
                 requests.search();
                 // Hide no results and show results
