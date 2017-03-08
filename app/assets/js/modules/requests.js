@@ -57,10 +57,10 @@ var requests = (function () {
                     loadingIndicator.classList.remove("show");
                 })
                 .on("40x", function () {
-
+                    window.location.href = window.location.origin + "/404.html";
                 })
                 .on("500", function () {
-
+                    window.location.href = window.location.origin + "/404.html";
                 })
                 .go();
         },
@@ -85,10 +85,10 @@ var requests = (function () {
                     loadingIndicator.classList.remove("show");
                 })
                 .on("40x", function () {
-
+                    window.location.href = window.location.origin + "/404.html";
                 })
                 .on("500", function () {
-
+                    window.location.href = window.location.origin + "/404.html";
                 })
                 .go();
         },
@@ -112,10 +112,10 @@ var requests = (function () {
                     }
                 })
                 .on("40x", function () {
-
+                    window.location.href = window.location.origin + "/404.html";
                 })
                 .on("500", function () {
-
+                    window.location.href = window.location.origin + "/404.html";
                 })
                 .go();
         },
@@ -151,10 +151,10 @@ var requests = (function () {
                     loadingIndicator.classList.remove("show");
                 })
                 .on("40x", function () {
-
+                    window.location.href = window.location.origin + "/404.html";
                 })
                 .on("500", function () {
-
+                    window.location.href = window.location.origin + "/404.html";
                 })
                 .go();
         }
