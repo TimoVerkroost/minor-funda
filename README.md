@@ -1,26 +1,57 @@
+![Funda_logo](https://github.com/TimoVerkroost/minor-funda/blob/master/app/assets/images/fundawonen-logo.svg "Funda logo")
+
 # Prototype a new search functionality for Funda
 Use the APIs of Funda to get your own ideas and understanding a new way of seeking homes. A list, on a map, or another way, everything is worth considering! The aim is to help the Funda user to find their perfect home quickly and easily.
 
 ## User story
 As Funda user I want to get suggestions of homes that I think might be interesting, so I get that offer just outside my search.
 
-### Possible solutions
-- When a user searches with a max price suggest more houses with 5% higher price.
-- When a user searches with a min price suggest more houses with 5% lesser price.
-- When a user searches within a specific area or place suggest a +5km range and +10km range with the same filters.
-- When a user searches and is logged in use the saved homes to suggest other houses in the neighbourhood.
 
 ## Why does this application have a purpose?
+User get new suggestions for homes that they doesn't think of at first. This can lead to more views at homes that normally not founded at first. This can be a benefit for Funda and the user/ home searcher.
 
 ## How does it works
+1. The user already saved some homes that he or she likes, from this home we get the average price, square feet and rooms.
+2. When the user searches for homes he or she is using some filters, this filters will be saved.
+3. Combine the saved homes and search filters to generate suggested homes that the user possibly likes.
 
 ## Usage
+config.js - in this file the API settings are defined without it the application doesn't work.
+```js
+var config = {
+    apiURL: "API_URL",
+    kyrandiaURL: "API_URL_PROXY",
+    autoSuggestURL: "AutoSuggest_API_URL",
+    mapApiURL: "FundaMaps_API_URL",
+    apiKey: "API_Key"
+};
+```
+
+Load all modules in HTML.
+```html
+<!-- HTML -->
+<script src="assets/js/config.js"></script>
+<script src="assets/js/routie.min.js"></script>
+<script src="assets/js/transparency.min.js"></script>
+<script src="assets/js/aja.min.js"></script>
+<script src="assets/js/modules/templates.js"></script>
+<script src="assets/js/modules/requests.js"></script>
+<script src="assets/js/modules/routes.js"></script>
+<script src="assets/js/modules/suggestions.js"></script>
+<script src="assets/js/modules/sections.js"></script>
+<script src="assets/js/app.js"></script>
+```
 
 ## Resources
 The application is mostly build with native JavaScript only 2 micro libraries are added. beside the JavaScript, the application gets it's information from an external API.
 - [Aja.js](http://krampstudio.com/aja.js/) - Ajax without XML Asynchronous JavaScript And JSON.
 - [TransparencyJS](https://github.com/leonidas/transparency) - A semantic template engine for the browser. It maps JSON objects to DOM elements by id, class and data-bind attributes.
+- [Routie](https://github.com/jgallen23/routie) - A tiny javascript hash router.
 
 ## Wishlist
-
-## Live demo
+- Infinite scroll or pagination to get more then 25 results.
+- Make suggestions also based on type of home.
+- Expand search with; huur, nieuwbouw, recreatie and europa (now it is only "koop").
+- Implement the suggestion in Funda.nl website.
+- More variables to make suggestions.
+- Under the hood generated objects that only contains the needed information to generate the suggestions.
