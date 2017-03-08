@@ -29,7 +29,7 @@ var requests = (function () {
     var suggestedURL;
     var minPriceSuggested;
     var maxPriceSuggested;
-    var radiusSuggested = "/+15km";
+    var radiusSuggested = "/+5km";
     var price;
     var area;
     var rooms;
