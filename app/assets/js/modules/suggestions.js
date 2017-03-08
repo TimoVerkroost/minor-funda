@@ -23,7 +23,10 @@ var suggestions = (function () {
             }, "");
             averageRooms = Math.round(averageRooms / items.length);
 
-            requests.getSuggestedHomes(averagePrice, averageSurface, averageRooms);
+            // Get average and set in localStorage to use everywhere in the application
+            localStorage.setItem("fundaAveragePrice", averagePrice);
+            localStorage.setItem("fundaAverageSurface", averageSurface);
+            localStorage.setItem("fundaAverageRooms", averageRooms);
         }
     };
 
