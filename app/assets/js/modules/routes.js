@@ -29,10 +29,6 @@ var routers = (function () {
                     document.getElementById("suggesties").classList.add("active");
                 }
             });
-        },
-        // Failed loads when data from API is NOT successfully loaded
-        failed: function () {
-
         }
     };
 
