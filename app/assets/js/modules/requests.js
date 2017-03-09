@@ -11,7 +11,7 @@ var requests = (function () {
     var yearRange;
     var minPrice;
     var maxPrice;
-    var typeHouse = "/appartement";
+    var typeHome;
     var searchURL;
     var page = 1;
 
@@ -40,9 +40,10 @@ var requests = (function () {
             place       = localStorage.fundaPlace;
             range       = localStorage.fundaRange;
             yearRange   = localStorage.fundaBuildYear;
+            typeHome    = localStorage.fundaTypeHome;
             minPrice    = localStorage.fundaMinPrice;
             maxPrice    = localStorage.fundaMaxPrice;
-            searchURL = "/?type="+ type +"&zo=/"+ place +"/+"+ range +"km/"+ minPrice +"-"+ maxPrice +"/0+woonopp/appartement/2+kamers/bouwperiode-"+ yearRange +"/&page="+ page +"&pagesize=25";
+            searchURL = "/?type="+ type +"&zo=/"+ place +"/+"+ range +"km/"+ minPrice +"-"+ maxPrice +"/0+woonopp/"+ typeHome +"/2+kamers/bouwperiode-"+ yearRange +"/&page="+ page +"&pagesize=25";
             callURL = config.kyrandiaURL + config.apiKey + searchURL;
             // Loading indicator
             loadingIndicator.classList.add("show");
@@ -126,7 +127,8 @@ var requests = (function () {
         getSuggestedHomes: function () {
             // Info from search
             place       = localStorage.fundaPlace;
-            yearRange   = localStorage.fundaBuildYear;
+            typeHome    = localStorage.fundaTypeHome;
+            //yearRange   = localStorage.fundaBuildYear;
             // Info from saved
             price       = localStorage.fundaAveragePrice;
             area        = localStorage.fundaAverageSurface;
@@ -136,7 +138,7 @@ var requests = (function () {
             // Make max price range 5% higher then max price
             maxPriceSuggested = Math.round(price * 1.05);
             // Generate API call URL for suggested items
-            suggestedURL = "?type="+ type +"&zo=/"+ place +"/"+ radiusSuggested +"/" + minPriceSuggested +"-"+ maxPriceSuggested +"/"+ area +"+woonopp"+  typeHouse + "/" + rooms +"+kamers/&page=1&pagesize=25";
+            suggestedURL = "?type="+ type +"&zo=/"+ place +"/"+ radiusSuggested +"/" + minPriceSuggested +"-"+ maxPriceSuggested +"/"+ area +"+woonopp"+  "/" + typeHome + "/" + rooms +"+kamers/&page=1&pagesize=25";
             // Combine URL with API root url and API key
             callURL = config.kyrandiaURL + config.apiKey + suggestedURL;
             // Loading indicator

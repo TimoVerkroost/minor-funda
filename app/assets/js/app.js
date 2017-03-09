@@ -11,6 +11,6 @@
             }
         };
     })();
-
+    // Start the app
     app.init();
 }());

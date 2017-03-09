@@ -6,6 +6,7 @@ var sections = (function () {
         searchFieldInput,
         range,
         buildYear,
+        typeHome,
         minPrice,
         maxPrice;
     var suggestedLink = document.getElementById("suggestiesLink");
@@ -70,6 +71,9 @@ var sections = (function () {
                 // Get buildYear input value and set in localStorage to use everywhere in the application
                 buildYear = document.getElementById("buildYear").value;
                 localStorage.setItem("fundaBuildYear", buildYear);
+                // Get typeHome input value and set in localStorage to use everywhere in the application
+                typeHome = document.getElementById("typeHome").value;
+                localStorage.setItem("fundaTypeHome", typeHome);
                 // Get buildYear input value and set in localStorage to use everywhere in the application
                 minPrice = document.getElementById("minPrice").value;
                 localStorage.setItem("fundaMinPrice", minPrice);
