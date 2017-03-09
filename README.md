@@ -28,16 +28,18 @@ var config = {
 Load all modules in HTML.
 ```html
 <!-- HTML -->
-<script src="assets/js/config.js"></script>
-<script src="assets/js/routie.min.js"></script>
-<script src="assets/js/transparency.min.js"></script>
-<script src="assets/js/aja.min.js"></script>
-<script src="assets/js/modules/templates.js"></script>
-<script src="assets/js/modules/requests.js"></script>
-<script src="assets/js/modules/routes.js"></script>
-<script src="assets/js/modules/suggestions.js"></script>
-<script src="assets/js/modules/sections.js"></script>
-<script src="assets/js/app.js"></script>
+        <script src="assets/js/config.js"></script>
+        <script src="assets/js/vendors/routie.min.js"></script>
+        <script src="assets/js/vendors/transparency.min.js"></script>
+        <script src="assets/js/vendors/aja.min.js"></script>
+        <script src="assets/js/modules/templates.js"></script>
+        <script src="assets/js/modules/requests.js"></script>
+        <script src="assets/js/modules/routes.js"></script>
+        <script src="assets/js/modules/suggestions.js"></script>
+        <script src="assets/js/modules/sections.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>
 ```
 
 ## Resources
