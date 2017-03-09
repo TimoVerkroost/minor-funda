@@ -103,9 +103,17 @@
                         </label>
                     </div>
                 </form>
-                <div id="haveSearchResults" class="container">
+                <section id="haveSearchResults" class="container">
                     <h2>Zoekresultaten</h2>
-                    <section id="searchResults">
+                    <aside class="suggestionsBanner">
+                        <h4>Wij hebben een aantal woningen die jij waarschijnlijk ook interressant vindt voor je
+                            op een rijtje gezet.</h4>
+                        <a href="#suggesties" class="linkSuggestions">
+                            <span class="icon-light-white"></span>
+                            <span>Toon suggesties</span>
+                        </a>
+                    </aside>
+                    <article id="searchResults">
                         <div class="result">
                             <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
                             <div class="infoHome">
@@ -115,17 +123,25 @@
                                 <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
                             </div>
                         </div>
-                    </section>
-                </div>
-                <div id="noSearchResults" class="container">
-                    <h2>Zoek eerst om verder te gaan.</h2>
-                </div>
+                    </article>
+                </section>
+                <section id="noSearchResults" class="container">
+                    <h2>Geen resultaten</h2>
+                    <p>Er kunnen nog geen suggesties gemaakt worden omdat je nog niet naar woningen heeft gezocht. Zoek eerst naar woningen om suggesties te tonen.</p>
+                </section>
             </section>
 
             <section id="suggesties">
                 <div class="container">
                     <h2>Suggesties</h2>
-                    <section id="suggestieResults">
+                    <aside class="suggestionsBanner">
+                        <h4>Deze suggesties zijn gebaseerd op jouw zoek filters en opgeslagen huizen.</h4>
+                        <a href="#" class="linkSuggestions">
+                            <span class="icon-search-white"></span>
+                            <span>Terug naar zoeken</span>
+                        </a>
+                    </aside>
+                    <article id="suggestieResults">
                         <div class="result">
                             <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
                             <div class="infoHome">
@@ -135,14 +151,21 @@
                                 <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
                             </div>
                         </div>
-                    </section>
+                    </article>
                 </div>
             </section>
 
             <section id="bewaard">
                 <div class="container">
                     <h2>Bewaard</h2>
-                    <section id="bewaardResults">
+                    <aside class="suggestionsBanner">
+                        <h4>Wanneer je meer woningen opslaat zullen de suggesties ook specifieker worden.</h4>
+                        <a href="#" class="linkSuggestions">
+                            <span class="icon-search-white"></span>
+                            <span>Terug naar zoeken</span>
+                        </a>
+                    </aside>
+                    <article id="bewaardResults">
                         <div class="result">
                             <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
                             <div class="infoHome">
@@ -152,7 +175,7 @@
                                 <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
                             </div>
                         </div>
-                    </section>
+                    </article>
                 </div>
             </section>
         </main>

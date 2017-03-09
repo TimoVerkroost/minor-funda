@@ -4,6 +4,8 @@ body {
     margin: 0;
     font-family: "Proxima Nova", sans-serif;
     color: #333333;
+    font-size: 1em;
+    line-height: 1.4;
 }
 
 body {
@@ -18,6 +20,10 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+p {
+    max-width: 30em;
 }
 
 main {
@@ -37,6 +43,7 @@ footer {
     margin-top: 2em;
     background-color: rgb(237, 237, 237);
 }
+
 
 nav {
     background-color: #F7A100;
@@ -172,7 +179,8 @@ input[type="search"] {
     width: 100%;
 }
 
-input[type="submit"] {
+input[type="submit"],
+.linkSuggestions {
     background-color: #0071B3;
     color: #FFFFFF;
     transition: background-color .5s ease, border-color .5s ease;
@@ -180,10 +188,13 @@ input[type="submit"] {
     box-sizing: border-box;
     margin: 1em auto;
     border-color: #0071B3;
+    border-radius: .15em;
 }
 
 input[type="submit"]:hover,
-input[type="submit"]:focus {
+input[type="submit"]:focus,
+.linkSuggestions:hover,
+.linkSuggestions:focus {
     background-color: #DE9000;
     border-color: #DE9000;
 }
@@ -231,6 +242,10 @@ input[type="submit"]:focus {
     z-index: 100;
 }
 
+#noSearchResults > p {
+    margin: 0 auto;
+}
+
 .loaderAjax {
     position: absolute;
     z-index:99;
@@ -272,10 +287,78 @@ input[type="submit"]:focus {
     max-width: 100%;
 }
 
+.container > article {
+    flex-basis: 100%;
+    max-width: 100%;
+    order: 3;
+}
+
+.container > aside {
+    flex-basis: 100%;
+    max-width: 100%;
+    order: 1;
+}
+
 .container > h2 {
     flex-basis: 100%;
     max-width: 100%;
     text-align: center;
+    order: 2;
+}
+
+.suggestionsBanner {
+    box-sizing: border-box;
+    padding: 1.25em 1em;
+    background-color: #E6F2F7;
+    color: #333333;
+    margin: 2em 0;
+    height: 100%;
+    text-align: center;
+}
+
+.suggestionsBanner h4 {
+    margin: 0;
+    text-align: left;
+}
+
+.linkSuggestions {
+    display: inline-block;
+    text-decoration: none;
+    padding: .8em 1em;
+    background-color: rgb(247, 161, 0);
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 480px) {
+
+    .container > aside {
+        flex-basis: auto;
+        margin: 2em auto;
+        max-width: 30em;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+
+    .container > h2 {
+        text-align: left;
+        order: 1;
+    }
+
+    .container > aside {
+        flex-basis: 40%;
+        max-width: 40%;
+        order: 3;
+        margin: 0 0 0 5%;
+    }
+
+    .container > article {
+        flex-basis: 55%;
+        max-width: 55%;
+        order: 2;
+    }
+
 }
 
 .show {
@@ -369,6 +452,7 @@ input[type="submit"]:focus {
     .result img {
         flex-basis: 40%;
         max-width: 40%;
+        align-self: center;
     }
 
     .result .infoHome {
@@ -386,6 +470,7 @@ input[type="submit"]:focus {
     display: inline-block;
     vertical-align: middle;
     line-height: 1em;
+    margin-right: .5em;
     background-size: cover;
 }
 
@@ -397,13 +482,33 @@ input[type="submit"]:focus {
     vertical-align: middle;
     line-height: 1em;
     background-size: cover;
+    margin-right: .5em;
     animation-iteration-count: 3;
+}
+
+.icon-search-white {
+    background: url(../images/search-icon.svg) no-repeat;
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1em;
+    margin-right: .5em;
+    background-size: cover;
+}
+
+nav .icon-heart-white,
+nav .icon-light-white {
+    margin-right: 0;
 }
 
 @media screen and (min-width: 480px) {
 
+    nav .icon-heart-white,
+    nav .icon-light-white,
     .icon-heart-white,
-    .icon-light-white {
+    .icon-light-white,
+    .icon-search-white{
         margin-right: .5em;
     }
 
