@@ -48,7 +48,7 @@ var sections = (function () {
                 suggestedLink.classList.remove("animatedLight");
                 suggestedLink.classList.add("disabled");
                 // Remove link from suggest so user can't go there
-                suggestedLink.getElementsByTagName("a")[0].setAttribute("href", "#");
+                suggestedLink.getElementsByTagName("a")[0].removeAttribute("href");
             }
         },
         search: function () {
