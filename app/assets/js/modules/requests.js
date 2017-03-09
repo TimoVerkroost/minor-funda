@@ -2,6 +2,7 @@
 var requests = (function () {
     var callURL;
     var loadingIndicator = document.getElementsByClassName("loaderAjax")[0];
+    var errorPage = window.location.origin + "/error.html";
 
     // Search API
     var type = "koop";
@@ -29,7 +30,7 @@ var requests = (function () {
     var suggestedURL;
     var minPriceSuggested;
     var maxPriceSuggested;
-    var radiusSuggested = "/+5km";
+    var radiusSuggested = "/+15km";
     var price;
     var area;
     var rooms;
@@ -41,7 +42,7 @@ var requests = (function () {
             yearRange   = localStorage.fundaBuildYear;
             minPrice    = localStorage.fundaMinPrice;
             maxPrice    = localStorage.fundaMaxPrice;
-            searchURL = "/?type=koop&zo=/"+ place +"/+"+ range +"km/"+ minPrice +"-"+ maxPrice +"/0+woonopp/appartement/2+kamers/bouwperiode-"+ yearRange +"/&page="+ page +"&pagesize=25";
+            searchURL = "/?type="+ type +"&zo=/"+ place +"/+"+ range +"km/"+ minPrice +"-"+ maxPrice +"/0+woonopp/appartement/2+kamers/bouwperiode-"+ yearRange +"/&page="+ page +"&pagesize=25";
             callURL = config.kyrandiaURL + config.apiKey + searchURL;
             // Loading indicator
             loadingIndicator.classList.add("show");
@@ -57,10 +58,10 @@ var requests = (function () {
                     loadingIndicator.classList.remove("show");
                 })
                 .on("40x", function () {
-                    window.location.href = window.location.origin + "/404.html";
+                    window.location.href = errorPage;
                 })
                 .on("500", function () {
-                    window.location.href = window.location.origin + "/404.html";
+                    window.location.href = errorPage;
                 })
                 .go();
         },
@@ -85,10 +86,10 @@ var requests = (function () {
                     loadingIndicator.classList.remove("show");
                 })
                 .on("40x", function () {
-                    window.location.href = window.location.origin + "/404.html";
+                    window.location.href = errorPage;
                 })
                 .on("500", function () {
-                    window.location.href = window.location.origin + "/404.html";
+                    window.location.href = errorPage;
                 })
                 .go();
         },
@@ -112,10 +113,12 @@ var requests = (function () {
                     }
                 })
                 .on("40x", function () {
-                    window.location.href = window.location.origin + "/404.html";
+                    // Redirect to error page
+                    window.location.href = errorPage;
                 })
                 .on("500", function () {
-                    window.location.href = window.location.origin + "/404.html";
+                    // Redirect to error page
+                    window.location.href = errorPage;
                 })
                 .go();
         },
@@ -151,10 +154,12 @@ var requests = (function () {
                     loadingIndicator.classList.remove("show");
                 })
                 .on("40x", function () {
-                    window.location.href = window.location.origin + "/404.html";
+                    // Redirect to error page
+                    window.location.href = errorPage;
                 })
                 .on("500", function () {
-                    window.location.href = window.location.origin + "/404.html";
+                    // Redirect to error page
+                    window.location.href = errorPage;
                 })
                 .go();
         }
