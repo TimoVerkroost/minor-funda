@@ -37,7 +37,10 @@
             <section id="searchContainer">
                 <form id="searchFields">
                     <div class="container">
-                        <input type="search" name="plaats" id="searchField" autocomplete="off" placeholder="Plaats, buurt, adres etc." required>
+                        <label for="searchField">
+                            <span>Plaats:</span>
+                            <input type="search" name="plaats" id="searchField" autocomplete="off" placeholder="Plaats" required>
+                        </label>
                         <label for="range">
                             <span>Afstand:</span>
                             <select name="afstand" id="range">

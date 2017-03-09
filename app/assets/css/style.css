@@ -34,6 +34,7 @@ main > section.active {
 
 footer {
     padding: 2em 1em;
+    margin-top: 2em;
     background-color: rgb(237, 237, 237);
 }
 
@@ -141,7 +142,8 @@ select {
     padding-right: 2em;
 }
 
-label {
+label,
+label[for="searchField"] {
     width: 100%;
     align-self: flex-end;
 }
@@ -299,6 +301,8 @@ input[type="submit"]:focus {
     flex-wrap: wrap;
     position: relative;
     border-bottom: .1em solid #EDEDED;
+    animation-name: fadeIn;
+    animation-duration: 1s;
 }
 
 .result:first-of-type {
@@ -444,5 +448,15 @@ input[type="submit"]:focus {
 
     90% {
         transform: translate3d(0,-8px,0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
