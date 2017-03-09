@@ -96,6 +96,13 @@ var sections = (function () {
             }
             // Loaded last search from storage
             if (localStorage.getItem("fundaPlace") != null) {
+                // Fill in the stored values
+                document.getElementById("searchField").value = localStorage.fundaPlace;
+                document.getElementById("range").value       = localStorage.fundaRange;
+                document.getElementById("typeHome").value    = localStorage.fundaTypeHome;
+                document.getElementById("minPrice").value    = localStorage.fundaMinPrice;
+                document.getElementById("maxPrice").value    = localStorage.fundaMaxPrice;
+
                 requests.search();
                 // Hide no results and show results
                 noResults.classList.add("hide");
