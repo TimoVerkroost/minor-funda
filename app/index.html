@@ -1,174 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>Funda suggesties</title>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Funda suggesties</title>
 
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div class="loaderAjax"><span>Laden...</span></div>
-<nav id="top">
-    <div class="container">
-        <a id="logoTop" href="#">
-            <img alt="funda logo" src="assets/images/fundawonen-logo.svg">
-        </a>
-        <ul>
-            <li id="bewaardLink">
-                <a href="#bewaard">
-                    <span class="icon-heart-white"></span>
-                    <span class="value">Bewaard</span>
-                </a>
-            </li>
-            <li id="suggestiesLink">
-                <a href="#suggesties">
-                    <span class="icon-light-white"></span>
-                    <span class="value">Suggesties</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<header>
-
-</header>
-<main>
-    <section id="searchContainer">
-        <form id="searchFields">
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="loaderAjax"><span>Laden...</span></div>
+        <nav id="top">
             <div class="container">
-                <input type="search" name="plaats" id="searchField" autocomplete="off" placeholder="Plaats, buurt, adres etc." required>
-                <label for="range">
-                    <span>Afstand:</span>
-                    <select name="afstand" id="range">
-                        <option selected="selected" value="0">+0 km</option>
-                        <option value="5">+5 km</option>
-                        <option value="10">+10 km</option>
-                        <option value="15">+15 km</option>
-                    </select>
-                </label>
-                <label for="buildYear">
-                    <span>Bouwjaar:</span>
-                    <select name="bouwjaar" id="buildYear" >
-                        <option value="1981-1990">1981-1990</option>
-                        <option selected="selected" value="1991-2000">1991-2000</option>
-                        <option value="2001-2010">2001-2010</option>
-                    </select>
-                </label>
-                <label for="typeHome">
-                    <span>Soort woning:</span>
-                    <select name="soortWoning" id="typeHome">
-                        <option selected="selected" value="appartement">Appartement</option>
-                        <option value="woonhuis">Woonhuis</option>
-                    </select>
-                </label>
-                <label for="minPrice">
-                    <span>Min prijs:</span>
-                    <select name="minPrijs" id="minPrice">
-                        <option selected="selected" value="0">&euro; 0</option>
-                        <option value="50000">&euro; 50.000</option>
-                        <option value="75000">&euro; 75.000</option>
-                        <option value="100000">&euro; 100.000</option>
-                        <option value="125000">&euro; 125.000</option>
-                        <option value="150000">&euro; 150.000</option>
-                        <option value="175000">&euro; 175.000</option>
-                        <option value="225000">&euro; 225.000</option>
-                        <option value="250000">&euro; 250.000</option>
-                        <option value="275000">&euro; 275.000</option>
-                        <option value="300000">&euro; 300.000</option>
-                    </select>
-                </label>
-                <label for="maxPrice">
-                    <span>Max prijs:</span>
-                    <select name="maxPrijs" id="maxPrice">
-                        <option selected="selected" value="2000000">Geen maximum</option>
-                        <option value="50000">&euro; 50.000</option>
-                        <option value="75000">&euro; 75.000</option>
-                        <option value="100000">&euro; 100.000</option>
-                        <option value="125000">&euro; 125.000</option>
-                        <option value="150000">&euro; 150.000</option>
-                        <option value="175000">&euro; 175.000</option>
-                        <option value="200000">&euro; 200.000</option>
-                        <option value="225000">&euro; 225.000</option>
-                        <option value="250000">&euro; 250.000</option>
-                        <option value="275000">&euro; 275.000</option>
-                        <option value="300000">&euro; 300.000</option>
-                    </select>
-                </label>
-                <label for="submit">
-                    <input type="submit" value="Zoeken" id="submit">
-                </label>
+                <a id="logoTop" href="#">
+                    <img alt="funda logo" src="assets/images/fundawonen-logo.svg">
+                </a>
+                <ul>
+                    <li id="bewaardLink">
+                        <a href="#bewaard">
+                            <span class="icon-heart-white"></span>
+                            <span class="value">Bewaard</span>
+                        </a>
+                    </li>
+                    <li id="suggestiesLink">
+                        <a href="#suggesties">
+                            <span class="icon-light-white"></span>
+                            <span class="value">Suggesties</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </form>
-        <div id="haveSearchResults" class="container">
-            <h2>Zoekresultaten</h2>
-            <section id="searchResults">
-                <div class="result">
-                    <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
-                    <div class="infoHome">
-                        <h3><a class="title" href="">Adres</a></h3>
-                        <p class="address">Postcode en plaats</p>
-                        <strong class="price">Prijs</strong>
-                        <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
+        </nav>
+        <header>
+
+        </header>
+        <main>
+            <section id="searchContainer">
+                <form id="searchFields">
+                    <div class="container">
+                        <input type="search" name="plaats" id="searchField" autocomplete="off" placeholder="Plaats, buurt, adres etc." required>
+                        <label for="range">
+                            <span>Afstand:</span>
+                            <select name="afstand" id="range">
+                                <option selected="selected" value="0">+0 km</option>
+                                <option value="5">+5 km</option>
+                                <option value="10">+10 km</option>
+                                <option value="15">+15 km</option>
+                            </select>
+                        </label>
+                        <label for="buildYear">
+                            <span>Bouwjaar:</span>
+                            <select name="bouwjaar" id="buildYear" >
+                                <option value="1981-1990">1981-1990</option>
+                                <option selected="selected" value="1991-2000">1991-2000</option>
+                                <option value="2001-2010">2001-2010</option>
+                            </select>
+                        </label>
+                        <label for="typeHome">
+                            <span>Soort woning:</span>
+                            <select name="soortWoning" id="typeHome">
+                                <option selected="selected" value="appartement">Appartement</option>
+                                <option value="woonhuis">Woonhuis</option>
+                            </select>
+                        </label>
+                        <label for="minPrice">
+                            <span>Min prijs:</span>
+                            <select name="minPrijs" id="minPrice">
+                                <option selected="selected" value="0">&euro; 0</option>
+                                <option value="50000">&euro; 50.000</option>
+                                <option value="75000">&euro; 75.000</option>
+                                <option value="100000">&euro; 100.000</option>
+                                <option value="125000">&euro; 125.000</option>
+                                <option value="150000">&euro; 150.000</option>
+                                <option value="175000">&euro; 175.000</option>
+                                <option value="225000">&euro; 225.000</option>
+                                <option value="250000">&euro; 250.000</option>
+                                <option value="275000">&euro; 275.000</option>
+                                <option value="300000">&euro; 300.000</option>
+                            </select>
+                        </label>
+                        <label for="maxPrice">
+                            <span>Max prijs:</span>
+                            <select name="maxPrijs" id="maxPrice">
+                                <option selected="selected" value="2000000">Geen maximum</option>
+                                <option value="50000">&euro; 50.000</option>
+                                <option value="75000">&euro; 75.000</option>
+                                <option value="100000">&euro; 100.000</option>
+                                <option value="125000">&euro; 125.000</option>
+                                <option value="150000">&euro; 150.000</option>
+                                <option value="175000">&euro; 175.000</option>
+                                <option value="200000">&euro; 200.000</option>
+                                <option value="225000">&euro; 225.000</option>
+                                <option value="250000">&euro; 250.000</option>
+                                <option value="275000">&euro; 275.000</option>
+                                <option value="300000">&euro; 300.000</option>
+                            </select>
+                        </label>
+                        <label for="submit">
+                            <input type="submit" value="Zoeken" id="submit">
+                        </label>
                     </div>
+                </form>
+                <div id="haveSearchResults" class="container">
+                    <h2>Zoekresultaten</h2>
+                    <section id="searchResults">
+                        <div class="result">
+                            <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
+                            <div class="infoHome">
+                                <h3><a class="title" href="">Adres</a></h3>
+                                <p class="address">Postcode en plaats</p>
+                                <strong class="price">Prijs</strong>
+                                <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="noSearchResults" class="container">
+                    <h2>Zoek eerst om verder te gaan.</h2>
                 </div>
             </section>
-        </div>
-        <div id="noSearchResults" class="container">
-            <h2>Zoek eerst om verder te gaan.</h2>
-        </div>
-    </section>
 
-    <section id="suggesties">
-        <div class="container">
-            <h2>Suggesties</h2>
-            <section id="suggestieResults">
-                <div class="result">
-                    <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
-                    <div class="infoHome">
-                        <h3><a class="title" href="">Adres</a></h3>
-                        <p class="address">Postcode en plaats</p>
-                        <strong class="price">Prijs</strong>
-                        <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
-                    </div>
+            <section id="suggesties">
+                <div class="container">
+                    <h2>Suggesties</h2>
+                    <section id="suggestieResults">
+                        <div class="result">
+                            <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
+                            <div class="infoHome">
+                                <h3><a class="title" href="">Adres</a></h3>
+                                <p class="address">Postcode en plaats</p>
+                                <strong class="price">Prijs</strong>
+                                <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
-        </div>
-    </section>
 
-    <section id="bewaard">
-        <div class="container">
-            <h2>Bewaard</h2>
-            <section id="bewaardResults">
-                <div class="result">
-                    <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
-                    <div class="infoHome">
-                        <h3><a class="title" href="">Adres</a></h3>
-                        <p class="address">Postcode en plaats</p>
-                        <strong class="price">Prijs</strong>
-                        <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
-                    </div>
+            <section id="bewaard">
+                <div class="container">
+                    <h2>Bewaard</h2>
+                    <section id="bewaardResults">
+                        <div class="result">
+                            <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
+                            <div class="infoHome">
+                                <h3><a class="title" href="">Adres</a></h3>
+                                <p class="address">Postcode en plaats</p>
+                                <strong class="price">Prijs</strong>
+                                <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
-        </div>
-    </section>
-</main>
+        </main>
 
-<footer>
-    <div class="container">
-        &copy; 2017 Timo Verkroost
-    </div>
-</footer>
+        <footer>
+            <div class="container">
+                &copy; 2017 Timo Verkroost
+            </div>
+        </footer>
 
-<script src="assets/js/config.js"></script>
-<script src="assets/js/vendors/routie.min.js"></script>
-<script src="assets/js/vendors/transparency.min.js"></script>
-<script src="assets/js/vendors/aja.min.js"></script>
-<script src="assets/js/modules/templates.js"></script>
-<script src="assets/js/modules/requests.js"></script>
-<script src="assets/js/modules/routes.js"></script>
-<script src="assets/js/modules/suggestions.js"></script>
-<script src="assets/js/modules/sections.js"></script>
-<script src="assets/js/app.js"></script>
-</body>
+        <script src="assets/js/config.js"></script>
+        <script src="assets/js/vendors/routie.min.js"></script>
+        <script src="assets/js/vendors/transparency.min.js"></script>
+        <script src="assets/js/vendors/aja.min.js"></script>
+        <script src="assets/js/modules/templates.js"></script>
+        <script src="assets/js/modules/requests.js"></script>
+        <script src="assets/js/modules/routes.js"></script>
+        <script src="assets/js/modules/suggestions.js"></script>
+        <script src="assets/js/modules/sections.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
 </html>
