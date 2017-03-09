@@ -40,7 +40,7 @@
                 <input type="search" name="plaats" id="searchField" autocomplete="off" placeholder="Plaats, buurt, adres etc." required>
                 <label for="range">
                     <span>Afstand:</span>
-                    <select name="afstand" id="range" required>
+                    <select name="afstand" id="range">
                         <option selected="selected" value="0">+0 km</option>
                         <option value="5">+5 km</option>
                         <option value="10">+10 km</option>
@@ -49,7 +49,7 @@
                 </label>
                 <label for="buildYear">
                     <span>Bouwjaar:</span>
-                    <select name="bouwjaar" id="buildYear" required>
+                    <select name="bouwjaar" id="buildYear" >
                         <option value="1981-1990">1981-1990</option>
                         <option selected="selected" value="1991-2000">1991-2000</option>
                         <option value="2001-2010">2001-2010</option>
@@ -57,14 +57,14 @@
                 </label>
                 <label for="typeHome">
                     <span>Soort woning:</span>
-                    <select name="soortWoning" id="typeHome" required>
+                    <select name="soortWoning" id="typeHome">
                         <option selected="selected" value="appartement">Appartement</option>
                         <option value="woonhuis">Woonhuis</option>
                     </select>
                 </label>
                 <label for="minPrice">
                     <span>Min prijs:</span>
-                    <select name="minPrijs" id="minPrice" required>
+                    <select name="minPrijs" id="minPrice">
                         <option selected="selected" value="0">&euro; 0</option>
                         <option value="50000">&euro; 50.000</option>
                         <option value="75000">&euro; 75.000</option>
@@ -80,7 +80,7 @@
                 </label>
                 <label for="maxPrice">
                     <span>Max prijs:</span>
-                    <select name="maxPrijs" id="maxPrice" required>
+                    <select name="maxPrijs" id="maxPrice">
                         <option selected="selected" value="2000000">Geen maximum</option>
                         <option value="50000">&euro; 50.000</option>
                         <option value="75000">&euro; 75.000</option>
@@ -104,12 +104,12 @@
             <h2>Zoekresultaten</h2>
             <section id="searchResults">
                 <div class="result">
-                    <img class="mainImage">
+                    <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
                     <div class="infoHome">
-                        <h3><a class="title" href=""></a></h3>
-                        <p class="address"></p>
-                        <strong class="price"></strong>
-                        <p><span class="area"></span> - <span class="rooms"></span></p>
+                        <h3><a class="title" href="">Adres</a></h3>
+                        <p class="address">Postcode en plaats</p>
+                        <strong class="price">Prijs</strong>
+                        <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
                     </div>
                 </div>
             </section>
@@ -124,12 +124,12 @@
             <h2>Suggesties</h2>
             <section id="suggestieResults">
                 <div class="result">
-                    <img class="mainImage">
+                    <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
                     <div class="infoHome">
-                        <h3><a class="title" href=""></a></h3>
-                        <p class="address"></p>
-                        <strong class="price"></strong>
-                        <p><span class="area"></span> - <span class="rooms"></span></p>
+                        <h3><a class="title" href="">Adres</a></h3>
+                        <p class="address">Postcode en plaats</p>
+                        <strong class="price">Prijs</strong>
+                        <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
                     </div>
                 </div>
             </section>
@@ -141,12 +141,12 @@
             <h2>Bewaard</h2>
             <section id="bewaardResults">
                 <div class="result">
-                    <img class="mainImage">
+                    <img class="mainImage" src="assets/images/dummy-image.png" alt="Dummy image">
                     <div class="infoHome">
-                        <h3><a class="title" href=""></a></h3>
-                        <p class="address"></p>
-                        <strong class="price"></strong>
-                        <p><span class="area"></span> - <span class="rooms"></span></p>
+                        <h3><a class="title" href="">Adres</a></h3>
+                        <p class="address">Postcode en plaats</p>
+                        <strong class="price">Prijs</strong>
+                        <p><span class="area">Vierkante meters</span> - <span class="rooms">Aantal kamers</span></p>
                     </div>
                 </div>
             </section>
@@ -155,7 +155,9 @@
 </main>
 
 <footer>
-
+    <div class="container">
+        &copy; 2017 Timo Verkroost
+    </div>
 </footer>
 
 <script src="assets/js/config.js"></script>

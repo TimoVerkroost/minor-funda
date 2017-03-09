@@ -16,6 +16,9 @@ var templates = (function () {
                 mainImage: {
                     src: function() {
                         return this.FotoLarge;
+                    },
+                    alt: function () {
+                        return this.Adres;
                     }
                 },
                 title: {
@@ -32,7 +35,7 @@ var templates = (function () {
                     }
                 },
                 price: {
-                    innerHTML: function() {
+                    html: function() {
                         return this.PrijsGeformatteerdHtml;
                     }
                 },
@@ -57,6 +60,9 @@ var templates = (function () {
                 mainImage: {
                     src: function() {
                         return this.FotoLarge;
+                    },
+                    alt: function () {
+                        return this.Adres;
                     }
                 },
                 title: {
@@ -73,7 +79,7 @@ var templates = (function () {
                     }
                 },
                 price: {
-                    innerHTML: function() {
+                    html: function() {
                         return this.PrijsGeformatteerdHtml;
                     }
                 },
@@ -99,6 +105,9 @@ var templates = (function () {
                     src: function() {
                         // Make image source
                         return "http://cloud.funda.nl/valentina_media"+ this.img.slice(0, this.img.indexOf(".")) + "_groot.jpg";
+                    },
+                    alt: function () {
+                        return this.adr;
                     }
                 },
                 title: {
@@ -115,7 +124,7 @@ var templates = (function () {
                     }
                 },
                 price: {
-                    innerHTML: function() {
+                    html: function() {
                         return this.prs;
                     }
                 },

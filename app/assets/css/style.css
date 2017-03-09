@@ -20,6 +20,11 @@ main > section.active {
     display: block;
 }
 
+footer {
+    padding: 2em 1em;
+    background-color: rgb(237, 237, 237);
+}
+
 nav {
     background-color: #F7A100;
     color: #FFFFFF;
@@ -164,8 +169,8 @@ input[type="submit"]:focus {
 @media screen and (min-width: 580px) {
 
     label {
-        width: 49%;
-        margin:.2em .5% ;
+        width: 32.33%;
+        margin:.2em .5%;
     }
 
     label[for="submit"] {
@@ -173,7 +178,7 @@ input[type="submit"]:focus {
     }
 
     input[type="submit"] {
-        margin: .5em auto;
+        margin: 0 auto;
     }
 
 }
@@ -183,6 +188,12 @@ input[type="submit"]:focus {
     label {
         width: 19%;
         margin:.2em .5%;
+    }
+
+    label[for="submit"] {
+        flex-basis: 40%;
+        max-width: 40%;
+        margin: .5em auto;
     }
 
     input[type="submit"] {
@@ -293,7 +304,7 @@ input[type="submit"]:focus {
 .result .title {
     color: #0071B3;
     text-decoration: none;
-    background-color: background-color: rgba(237,237,237, 0);
+    background-color: rgba(237,237,237, 0);
 }
 
 .result .address {
