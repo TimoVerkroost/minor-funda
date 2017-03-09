@@ -1,3 +1,5 @@
+![funda_logo](https://github.com/TimoVerkroost/minor-funda/blob/master/images/fundawonen-logo.png "Funda logo")
+
 # Prototype a new search functionality for Funda
 Use the APIs of Funda to get your own ideas and understanding a new way of seeking homes. A list, on a map, or another way, everything is worth considering! The aim is to help the Funda user to find their perfect home quickly and easily.
 
