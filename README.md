@@ -55,3 +55,4 @@ The application is mostly build with native JavaScript only 2 micro libraries ar
 - Implement the suggestion in Funda.nl website.
 - More variables to make suggestions.
 - Under the hood generated objects that only contains the needed information to generate the suggestions.
+- Filter out the suggestions that are also in the search.
