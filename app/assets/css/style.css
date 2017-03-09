@@ -180,7 +180,7 @@ input[type="search"] {
 }
 
 input[type="submit"],
-.linkSuggestions {
+.sidebar a.button {
     background-color: #0071B3;
     color: #FFFFFF;
     transition: background-color .5s ease, border-color .5s ease;
@@ -193,8 +193,8 @@ input[type="submit"],
 
 input[type="submit"]:hover,
 input[type="submit"]:focus,
-.linkSuggestions:hover,
-.linkSuggestions:focus {
+.sidebar a.button:hover,
+.sidebar a.button:focus {
     background-color: #DE9000;
     border-color: #DE9000;
 }
@@ -243,7 +243,8 @@ input[type="submit"]:focus,
 }
 
 #noSearchResults > p {
-    margin: 0 auto;
+    margin: 0;
+    order: 3;
 }
 
 .loaderAjax {
@@ -306,7 +307,7 @@ input[type="submit"]:focus,
     order: 2;
 }
 
-.suggestionsBanner {
+.sidebar {
     box-sizing: border-box;
     padding: 1.25em 1em;
     background-color: #E6F2F7;
@@ -316,17 +317,23 @@ input[type="submit"]:focus,
     text-align: center;
 }
 
-.suggestionsBanner h4 {
+.sidebar h4 {
     margin: 0;
     text-align: left;
 }
 
-.linkSuggestions {
+.sidebar a.button {
     display: inline-block;
     text-decoration: none;
     padding: .8em 1em;
     background-color: rgb(247, 161, 0);
     margin-bottom: 0;
+}
+
+.sidebar a.button.suggestion {
+    animation-name: pulse;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 
 @media screen and (min-width: 480px) {
@@ -563,5 +570,24 @@ nav .icon-light-white {
 
     to {
         opacity: 1;
+    }
+}
+
+
+@keyframes pulse {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    10% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    20% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
     }
 }
