@@ -6,10 +6,22 @@ body {
     color: #333333;
 }
 
+body {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
 img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+main {
+    flex: 1;
 }
 
 main > section {
@@ -35,10 +47,10 @@ nav {
 nav #logoTop {
     display: inline-block;
     height: 100%;
-    width: 7em;
+    width: 6em;
     align-self: center;
-    flex-basis: 100%;
-    padding: 1em;
+    padding: 0;
+    margin-right: .5em;
 }
 
 nav #logoTop img {
@@ -48,7 +60,7 @@ nav #logoTop img {
 
 nav ul {
     list-style-type: none;
-    margin: 0 auto;
+    margin: 0 0 0 auto;
     align-self: center;
     display: inline-block;
     padding:0;
@@ -63,6 +75,10 @@ nav li {
 
 nav li:last-of-type {
     border-right: .1em solid #DE9000;
+}
+
+nav li span.value {
+    display: none;
 }
 
 nav li a {
@@ -88,6 +104,10 @@ nav li a:focus {
 
     nav ul {
         margin: 0 0 0 auto;
+    }
+
+    nav li span.value {
+        display: inline-block;
     }
 
     nav li a {
