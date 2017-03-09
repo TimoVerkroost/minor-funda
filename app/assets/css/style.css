@@ -44,7 +44,6 @@ footer {
     background-color: rgb(237, 237, 237);
 }
 
-
 nav {
     background-color: #F7A100;
     color: #FFFFFF;
@@ -572,7 +571,6 @@ nav .icon-light-white {
         opacity: 1;
     }
 }
-
 
 @keyframes pulse {
     from {
