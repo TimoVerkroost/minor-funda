@@ -42,6 +42,9 @@ Load all modules in HTML.
 </html>
 ```
 
+## Interaction diagram
+![interaction_diagram](https://github.com/TimoVerkroost/minor-funda/blob/master/images/interaction_diagram.png "Interaction diagram")
+
 ## Resources
 The application is mostly build with native JavaScript only 2 micro libraries are added. beside the JavaScript, the application gets it's information from an external API.
 - [Aja.js](http://krampstudio.com/aja.js/) - Ajax without XML Asynchronous JavaScript And JSON.
