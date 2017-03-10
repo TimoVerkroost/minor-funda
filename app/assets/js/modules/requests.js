@@ -16,7 +16,7 @@ var requests = (function () {
     var page = 1;
 
     // Tiny detail API
-    var tinyBase = "http://funda.kyrandia.nl/tinyId/";
+    var tinyBase = config.tinyURL;
     var tinyID = "49013804,49015089,49047381,49042033,49036708,49010470,48103537,49165890";
     var tinyURL = tinyBase + tinyID;
     var i;
