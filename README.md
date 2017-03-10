@@ -63,7 +63,7 @@ The application is mostly build with native JavaScript only 2 micro libraries ar
 - Filter out the suggestions that are also in the search.
 - Added autosuggest to the search.
 
-## Live demo (password protected)
+## Live demo (password protected ask me for access)
 - [Fake data demo](https://studie.timoverkroost.nl/minor-funda/)
     - **Note:** This demo will work with saved data from the API but the search results will be static and never change.
 - [Real data demo](https://studie.timoverkroost.nl/minor-funda/live) 
