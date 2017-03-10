@@ -16,18 +16,17 @@ User get new suggestions for homes that they doesn't think of at first. This can
 3. Combine the saved homes and search filters to generate suggested homes that the user possibly likes.
 
 ## Usage
-config.js - in this file the API settings are defined without it the application doesn't work.
+config.js - in this file the API settings are defined without it the application doesn't work. Place this file in de js folder root.
 ```js
 var config = {
     apiURL: "API_URL",
     kyrandiaURL: "API_URL_PROXY",
     autoSuggestURL: "AutoSuggest_API_URL",
-    mapApiURL: "FundaMaps_API_URL",
     apiKey: "API_Key"
 };
 ```
 
-Load all modules in HTML.
+Load all the modules add the bottom of the HTML page.
 ```html
 <!-- HTML -->
         <script src="assets/js/config.js"></script>
@@ -62,10 +61,11 @@ The application is mostly build with native JavaScript only 2 micro libraries ar
 - More variables to make suggestions.
 - Under the hood generated objects that only contains the needed information to generate the suggestions.
 - Filter out the suggestions that are also in the search.
+- Added autosuggest to the search.
 
 ## Live demo (password protected)
-- [With dummy content](https://studie.timoverkroost.nl/minor-funda/).
+- [Fake data demo](https://studie.timoverkroost.nl/minor-funda/).
     - **Note:** This demo will work with saved data from the API but the search results will be static and never change.
-- [With real content](https://studie.timoverkroost.nl/minor-funda/live) 
+- [Real data demo](https://studie.timoverkroost.nl/minor-funda/live) 
     - **Note:** The API is over http but the server is over https some browsers will block the http request. You can force the http request to allow them (in Google Chrome right in the browser bar).
    
