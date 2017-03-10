@@ -67,5 +67,5 @@ The application is mostly build with native JavaScript only 2 micro libraries ar
 - [With dummy content](https://studie.timoverkroost.nl/minor-funda/).
     - **Note:** This demo will work with saved data from the API but the search results will be static and never change.
 - [With real content](https://studie.timoverkroost.nl/minor-funda/live) 
-    - **Note:** The API is over http but the server is over https some browsers will block the http request. You can force the http request to allow them (in Google Chrome right in the browser bar)
+    - **Note:** The API is over http but the server is over https some browsers will block the http request. You can force the http request to allow them (in Google Chrome right in the browser bar).
    
